@@ -1,4 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDateTime;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -13,16 +16,18 @@ class SistemaReservasDeportivasTest {
 
     @Test
     void test() {
-        assertTrue(sistemaReservas.reservarPista(1, "21-05-2025 12:00", 60));
-        assertFalse(sistemaReservas.reservarPista(1, "21-05-2025 12:00", 60));
-        assertTrue(sistemaReservas.reservarPista(1, "21-05-2025 12:00", 60));
-        assertTrue(sistemaReservas.reservarPista(1, "21-05-2025 12:00", 60));
-        assertTrue(sistemaReservas.reservarPista(1, "21-05-2025 12:00", 60));
+    	LocalDateTime fecha = LocalDateTime.now();
+        assertTrue(sistemaReservas.reservarPista(null));
+        assertFalse(sistemaReservas.reservarPista(null));
+        assertTrue(sistemaReservas.reservarPista(null));
+        assertTrue(sistemaReservas.reservarPista(null));
+        assertTrue(sistemaReservas.reservarPista(null));
     }
     
     @Test
     void testCnacelarPista() {
-    	assertTrue(sistemaReservas.reservarPista(1, "21-05-2025 12:00", 60));
+    	LocalDateTime fecha = LocalDateTime.now();
+    	assertTrue(sistemaReservas.reservarPista(null));
     	assertTrue(sistemaReservas.cancelarReserva(0));
     }
     
